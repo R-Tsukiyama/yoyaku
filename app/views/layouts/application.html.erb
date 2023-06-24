@@ -18,8 +18,15 @@
     <% if flash[:alert] %>
       <p>Alert: <%= flash[:alert] %></p>
     <% end %>
+
+  <header>
+    <% if user_signed_in? %>
+      <%= render "layouts/shared/login_header" %>
+    <% else %>
+      <%= render "layouts/shared/logout_header" %>
+    <% end %>
+  </header>
+
     <%= yield %>
-
-
   </body>
 </html>
