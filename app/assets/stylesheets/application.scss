@@ -13,6 +13,8 @@
  *= require_tree .
  *= require_self
  */
+ 
+ //ヘッダー関連
 .navbar {
   background-color: #1c1d3b;
   height: 80px;
@@ -92,6 +94,7 @@
   text-decoration: none;
 }
 
+//フッター関連
 footer {
   align-items: center;
   background-color: #1c1d3b;
@@ -107,4 +110,32 @@ footer > div {
   width: 294px;
 }
 
+//アカウント登録関連
+.AccountFormWrapper {
+  background-color: #dfe2e6;
+  display: flex;
+  padding: 60px 0 120px;
+}
   
+.AccountFormContainer {
+  background-color: #fff;
+  margin: auto;
+  padding: 32px;
+  width: 704px;
+  text-align: center;
+}  
+
+.form-group {
+  margin-bottom: 1rem;
+}
+.form-label {
+  font-size: 14px;
+  line-height: 18px;
+  margin-bottom: 0.5rem;
+}
+.form-label::after {
+  content: "*";
+  color: #ff4949;
+  font-size: 14px;
+  margin-left: 4px;
+}
