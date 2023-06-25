@@ -13,7 +13,12 @@
  *= require_tree .
  *= require_self
  */
- 
+
+.field_with_errors{
+  color: #ff4949;
+  font-size: small;
+}
+
  //ヘッダー関連
 .navbar {
   background-color: #1c1d3b;

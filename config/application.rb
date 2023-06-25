@@ -20,5 +20,6 @@ module Yoyaku
     # config.eager_load_paths << Rails.root.join("extras")
 
     config.time_zone = 'Asia/Tokyo' 
+
   end
 end

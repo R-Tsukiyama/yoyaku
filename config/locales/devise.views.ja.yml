@@ -12,9 +12,11 @@ ja:
         email: Eメール
         encrypted_password: 暗号化パスワード
         failed_attempts: 失敗したログイン試行回数
+        introduction: 自己紹介
         last_sign_in_at: 最終ログイン時刻
         last_sign_in_ip: 最終ログインIPアドレス
         locked_at: ロック時刻
+        name: ユーザー名
         password: パスワード
         password_confirmation: パスワード（確認用）
         remember_created_at: ログイン記憶時刻
@@ -134,6 +136,7 @@ ja:
   errors:
     messages:
       already_confirmed: は既に登録済みです。ログインしてください。
+      blank: を入力してください。
       confirmation_period_expired: の期限が切れました。%{period} までに確認する必要があります。 新しくリクエストしてください。
       expired: の有効期限が切れました。新しくリクエストしてください。
       not_found: は見つかりませんでした。
