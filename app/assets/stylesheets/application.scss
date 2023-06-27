@@ -18,6 +18,11 @@
   color: #ff4949;
   font-size: small;
 }
+.alert{
+  position: -webkit-sticky;
+  position: sticky;
+  top:10px;
+}
 
  //ヘッダー関連
 .navbar {
