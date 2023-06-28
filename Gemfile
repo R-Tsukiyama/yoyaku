@@ -62,3 +62,5 @@ gem "devise-bootstrap5"
 gem 'carrierwave'
 gem 'mini_magick'
 gem 'rmagick'
+
+gem 'ransack'
