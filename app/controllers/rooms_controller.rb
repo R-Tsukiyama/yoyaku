@@ -61,7 +61,7 @@ class RoomsController < ApplicationController
       :price,
       :address,
       :roomimage,
-      :room_id
+      :user_id
     )
     .merge(user_id: current_user.id)
 
