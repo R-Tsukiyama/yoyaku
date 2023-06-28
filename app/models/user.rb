@@ -5,4 +5,5 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
   mount_uploader :image, ImageUploader
   validates :name, presence: true
+  validates :introduction, length: { maximum: 200 }
 end

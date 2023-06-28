@@ -1,9 +1,11 @@
 class UsersController < ApplicationController
-  def show
-    @user = current_user
-  end
+  before_action :authenticate_user!, only: [:mypage, :edit, :update]
   
   def mypage
+    @user = current_user
+  end  
+  
+  def show
     @user = current_user
   end
 
@@ -13,7 +15,7 @@ class UsersController < ApplicationController
 
   def update
     if current_user.update(user_params)
-      falsh[:notice] = "更新しました"
+      flash[:notice] = "更新しました"
       redirect_to users_show_path
     else
       render "edit"

@@ -8,9 +8,9 @@
         <a class="d-flex align-items-center NavProfile dropdown-toggle" href="#" id="dropdown-button" data-bs-toggle="dropdown" aria-expanded="false">
           <div class="userinformation">
             <% if current_user.image? %>
-              <%= image_tag current_user.image.url %>
+              <%= image_tag current_user.image.url, class: "rounded-circle", size: '60x60' %>
             <% else %>
-              <%= image_tag ("defaultAvatar.png") %>
+              <%= image_tag ("defaultAvatar.png"), class: "rounded-circle", size: '60x60' %>
             <% end %>
             <span><%= current_user.name %></span>
           </div> 
