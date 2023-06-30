@@ -64,5 +64,5 @@ class RoomsController < ApplicationController
       :user_id
     )
     .merge(user_id: current_user.id)
-
+  end
 end

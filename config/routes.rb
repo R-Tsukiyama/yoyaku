@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  get 'rooms/index'
   devise_for :users
   # ホーム設定
   get 'home/index'
@@ -13,7 +12,11 @@ Rails.application.routes.draw do
   get 'users/sign_out' => 'devise/sessions#destroy'
   post 'users/:id/edit' => 'users#show'
 
-  
+  #施設関連
+  get 'rooms/index', to:'room#index'
+  get 'rooms/search', to:'rooms#search'
+  resources :rooms
+
   
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
