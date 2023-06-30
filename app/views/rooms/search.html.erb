@@ -1,0 +1,39 @@
+<div class="SearchRoomsContainer">
+  <div class="SearchRoomsForm">
+    <%= search_form_for @q, url: search_rooms_path, method: :get do |f| %>
+    <%= f.search_field :address_cont, class:"form-control", id:"search-form", placeholder:"エリアを入力" %>
+    <%= f.search_field :name_or_description_cont, class:"form-control", id:"search-keyword", placeholder:"キーワードを入力" %>
+    <%= f.submit "検索", id:"search-btn" %>
+    <% end %>
+  </div>
+</div>
+<div class="RoomsContainer">
+<% if @rooms.empty? %>
+  <p class="RoomsResult">0件が見つかりました。</p>
+<% else %>
+  <p class="RoomsResult"><%= @rooms.count %>件が見つかりました。</p>
+  <ul class="RoomsList">
+    <% @rooms.each do |room| %>
+      <li class="Room">
+        <div class="RoomImage">
+          <% if room.roomimage? %>
+            <%= image_tag room.roomimage.url %>
+          <% else %>
+            <%= image_tag ("defaultRoomimage.png") %>
+          <% end %>  
+        </div>
+        <div class="RoomWrapper">
+          <p class="RoomName"><%= room.name %></p>
+          <p class="RoomAddress"><%= room.address %></p>
+          <p class="RoomOverview"><%= room.overview %></p>
+          <div class="RoomFooter">
+            <p class="RoomPrice">¥<%= number_with_delimiter(room.price) %>〜</p>
+            <%= link_to "詳細はこちら", room_path(room), class:"btn btn-danger" %>
+          </div>
+        </div>
+      </li>
+    <% end %>
+  </ul>
+<% end %>
+</div>
+<%= render 'layouts/shared/footer' %>

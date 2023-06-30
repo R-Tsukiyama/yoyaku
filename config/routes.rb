@@ -13,8 +13,8 @@ Rails.application.routes.draw do
   post 'users/:id/edit' => 'users#show'
 
   #施設関連
-  get 'rooms/index', to:'room#index'
-  get 'rooms/search', to:'rooms#search'
+  get 'rooms/own', to:'room#index'
+  get 'rooms/search', to:'rooms#search', as: 'search_rooms'
   resources :rooms
 
   

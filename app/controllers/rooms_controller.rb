@@ -12,7 +12,7 @@ class RoomsController < ApplicationController
   def create
     @room = current_user.rooms.build(room_params)
     if @room.save
-      redirect_to rooms_path
+      redirect_to rooms_own_path
     else
       render "new"
     end
@@ -40,7 +40,7 @@ class RoomsController < ApplicationController
   def destroy
     @room = Room.find(params[:id])
     @room.destroy
-    redirect_to rooms_own_path
+    redirect_to rooms_path
   end
 
   def search
