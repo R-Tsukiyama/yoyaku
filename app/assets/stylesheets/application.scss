@@ -104,6 +104,56 @@
   word-break: keep-all;
 }
 
+.SecondView {
+  width: 100%;
+  padding-right: var(--bs-gutter-x,.75rem);
+  padding-left: var(--bs-gutter-x,.75rem);
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.RecommendAreaSection {
+  margin-bottom: 260px;
+  > h2 {
+    border-bottom: 3px solid #ff7757;
+    font-size: 44px;
+    line-height: 66px;
+    margin-bottom: 140px;
+    padding-bottom: 15px;
+    width: fit-content;
+  }
+  .RecommendAreas {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  .RecommendArea {
+    display: flex;
+    flex-direction: column;
+    height: 455px;
+    justify-content: flex-end;
+    width: calc(25% - 24px);
+    .AreaImage {
+      position: relative;
+      img {
+        border-radius: 26px;
+        width: 320px;
+        height: 455px;
+      }
+    }
+    .AreaText {
+      position: absolute;
+      bottom: 25px;
+      left: 25px;
+
+      > span {
+        color: #fff;
+        font-size: 28px;
+        line-height: 42px;
+      }
+    }
+  }
+}
 .sign-in-button {
   margin-right: 32px;
   color: #fff;
@@ -125,12 +175,29 @@
   text-decoration: none;
 }
 
+.FirstViewSearch {
+  background: hsla(0,0%,100%,.4);
+  margin: auto;
+  padding: 32px;
+  width: 704px;
+
+  .form-control {
+      height: 58px;
+      margin-bottom: 16px
+  }
+}
+
 //フッター関連
 footer {
   align-items: center;
   background-color: #1c1d3b;
   display: flex;
   height: 465px;
+  .container-fluid {
+    max-width: 1440px;
+    padding: 0 50px;
+    margin-left: auto;
+ }
 }
 
 footer > div {
