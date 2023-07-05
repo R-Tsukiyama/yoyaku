@@ -45,7 +45,7 @@
             </div>
             <ul class="dropdown-menu DropdownMenu" aria-labelledby="dropdown-button">
               <li class="dropdown-item"><%= link_to "編集", edit_room_path(room) %></li>
-              <li class="dropdown-item danger"><%= link_to "削除", room_path(room), data: { turbo_method: :delete } %></li>
+              <li class="dropdown-item danger"><%= button_to "削除" , room_path(room), method: :delete , data: { confirm: "本当に削除しますか？" }, class:"btn btn-link btn-sm" %></li>
             </ul>  
           </div>
         </td>

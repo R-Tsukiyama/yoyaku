@@ -73,6 +73,29 @@
   img {
     margin-right: 8px;
   }
+  .dropdown-menu {
+    min-width: 122px;
+    padding: 9px 0;
+
+    .dropdown-item {
+      font-size: 14px;
+      line-height: 18px;
+      padding: 0 8px;
+      > a {
+        color: #333;
+        display: block;
+        width: 100%;
+        text-decoration: none;
+      }
+    }
+    .btn {
+      text-decoration: none;
+      color: red;
+      padding: 0 !important;
+      margin: 0 !important;
+      text-align: left !important;
+    }
+  }
 }
 
 

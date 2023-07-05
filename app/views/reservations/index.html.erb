@@ -53,7 +53,7 @@
                   </div>
                   <ul class="dropdown-menu DropdownMenu" aria-labelledby="dropdown-button">
                     <li class="dropdown-item"><%= link_to "編集", edit_reservation_path(reservation) %></li>
-                    <li class="dropdown-item danger"><%= link_to "削除",reservation_path(reservation), data: { turbo_method: :delete } %></li>
+                    <li class="dropdown-item danger"><%= button_to "削除" , reservation_path(reservation), method: :delete , data: { confirm: "本当に削除しますか？" }, class:"btn btn-link btn-sm" %></li>
                   </ul>  
                 </div>
               </td>
