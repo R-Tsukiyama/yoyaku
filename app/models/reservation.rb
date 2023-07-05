@@ -2,7 +2,7 @@ class Reservation < ApplicationRecord
     belongs_to :user
     belongs_to :room
     validates :checkin_date, :checkout_date, :person_count, presence: true
-    validates :start_end_check
+    validate :start_end_check
    #チェックイン/アウトのバリデーション
     def start_end_check
       if checkin_date == nil

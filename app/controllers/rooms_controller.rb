@@ -1,5 +1,6 @@
 class RoomsController < ApplicationController
-  before_action :search
+  #検索機能の取得
+  before_action :set_q, only: [:index, :search]
   def index
     @rooms = current_user.rooms #ログインしてるユーザーの登録施設のみ表示
     @user = current_user
@@ -12,7 +13,7 @@ class RoomsController < ApplicationController
   def create
     @room = current_user.rooms.build(room_params)
     if @room.save
-      redirect_to rooms_own_path
+      redirect_to rooms_path
     else
       render "new"
     end
@@ -22,6 +23,7 @@ class RoomsController < ApplicationController
     @room = Room.find(params[:id])
     @q = Room.ransack
     @user = current_user
+    @reservation = Reservation.new
   end
 
   def edit
@@ -64,5 +66,9 @@ class RoomsController < ApplicationController
       :user_id
     )
     .merge(user_id: current_user.id)
+  end
+  
+  def set_q
+    @q = Room.ransack(params[:q])
   end
 end

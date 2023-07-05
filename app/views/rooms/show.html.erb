@@ -7,7 +7,7 @@
     <% end %>
   </div>
 </div>
-<div class ="RoomDetailsContainer">
+<div class ="container RoomDetailsContainer">
   <div class="RoomDetailsHeader">
     <%= link_to "←戻る", request.referer %>
     <% if @room.user.id == current_user.id %>
@@ -27,4 +27,29 @@
       </div>
       <p class="RoomAddress"><%= @room.address %></p>
       <p class="RoomOverview"><%= @room.overview %></p>
+
+      <div class="ReservationFormContainer">
+        <%= form_with model: @reservation, url: confirm_reservations_path, local: true do |f| %>
+          <div class="ReservationForm">
+            <div class="form-group">
+              <%= f.label :checkin_date, "チェックイン" %>
+              <%= f.date_field :checkin_date, id:"checkin_date", class:"form-control", placeholder:"---- / -- / --" %>
+            </div>
+          <div class="form-group">
+            <%= f.label :checkout_date, "チェックアウト" %>
+            <%= f.date_field :checkout_date, id:"checkout_date", class:"form-control", placeholder:"---- / -- / --" %>
+          </div>
+          <div class="form-group person_count">
+            <%= f.label :person_count, "人数" %>
+            <%= f.number_field :person_count, class:"form-control", placeholder:"0" %><span>人</span>
+          </div>
+          <%= f.hidden_field :room_id, value: @room.id %>
+          <%= f.hidden_field :user_id, value: @user.id %>
+         </div> 
+         <%= f.submit "予約する", class:"btn" %>   
+        <% end %>           
+      </div>
+    </div>  
+  </div>
 </div>
+<%= render 'layouts/shared/footer' %>

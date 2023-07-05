@@ -23,7 +23,7 @@
       <%= f.file_field :roomimage, label:"画像をアップロード", class:"form-control" %>
     </div>
     <div class="form-buttons">
-      <%= f.submit "登録", class:"btn btn-primary submit" %>
+      <%= f.submit "登録", class:"btn btn-danger", style: "background-color:#ff7757" %>
       <%= link_to "キャンセル", new_room_path, class:"btn btn-outline-secondary cancel" %>
     </div>
     <% end %>

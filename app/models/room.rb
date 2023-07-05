@@ -5,6 +5,7 @@ class Room < ApplicationRecord
   validates :overview, presence: true
   validates :address, presence: true
   validates :price, presence: true
+  mount_uploader :roomimage, RoomimageUploader
 
   def self.search(search)
     if search != ""

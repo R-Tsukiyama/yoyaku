@@ -2,7 +2,7 @@ class ReservationsController < ApplicationController
   before_action :authenticate_user!
   def index
     @user = current_user
-    @reservations = reservation.where(user_id: current_user.id).includes(:user).order("created_at DESC")
+    @reservations = Reservation.where(user_id: current_user.id).includes(:user).order("created_at DESC")
   end
 
   def new
@@ -22,10 +22,11 @@ class ReservationsController < ApplicationController
     else
       flash.now[:alert] = "予約に失敗しました"
       render "rooms/show"
+    end
   end
 
   def edit
-    @rooms = Room.allowed
+    @rooms = Room.all
     @reservation = Reservation.find(params[:id])
   end
 

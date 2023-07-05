@@ -1,2 +1,66 @@
-<h1>Reservations#index</h1>
-<p>Find me in app/views/reservations/index.html.erb</p>
+<div class="ReservationsContainer">
+  <h2>予約済み一覧</h2>
+  <div class="table-responsive">
+    <table class="table ReservationsTable">
+      <thead>
+        <tr>
+          <th>画像</th>
+          <th>施設名</th>
+          <th>紹介文</th>
+          <th class="text-nowrap">合計料金</th>
+          <th class="text-nowrap">チェックイン</th>
+          <th class="text-nowrap">チェックアウト</th>
+          <th class="text-nowrap">予約確定日時</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @reservations.each do |reservation| %>
+        <tr>
+          <td>
+            <%= link_to room_path(reservation.room) do%>
+              <% if reservation.room.roomimage? %>
+                <%= image_tag reservation.room.roomimage.url, size: '120x69' %>
+              <% else %>
+                <%= image_tag ("defaultRoomimage.png"), size: '120x69' %>
+              <% end %>
+            <% end %>
+          </td>
+          <td>
+            <%= link_to room_path(reservation.room) do %>
+            <p><%= reservation.room.name %></p>
+            <% end %>
+          </td>
+          <td>
+            <p><%= reservation.room.overview %></p>
+          </td>
+          <td class="text-nowrap">
+            <p>¥<%= number_with_delimiter(reservation.total_price) %></p>
+          </td>
+          <td class="text-nowrap">
+            <p><%= reservation.checkin_date.strftime("%Y/%m/%d") %></p>
+          </td>
+          <td class="text-nowrap">
+            <p><%= reservation.checkout_date.strftime("%Y/%m/%d") %></p>
+          </td>
+          <td class="text-nowrap">
+            <p><%= reservation.created_at.strftime("%Y/%m/%d %H:%M") %></p>
+          </td>
+          <td>
+                <div class="dropdown">
+                  <div class="d-flex align-items-center justify-content-center" id="dropdown-button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <%= image_tag ("three-dot-menu.svg") %>
+                  </div>
+                  <ul class="dropdown-menu DropdownMenu" aria-labelledby="dropdown-button">
+                    <li class="dropdown-item"><%= link_to "編集", edit_reservation_path(reservation) %></li>
+                    <li class="dropdown-item danger"><%= link_to "削除",reservation_path(reservation), data: { turbo_method: :delete } %></li>
+                  </ul>  
+                </div>
+              </td>
+        </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>
+<%= render 'layouts/shared/footer' %>
