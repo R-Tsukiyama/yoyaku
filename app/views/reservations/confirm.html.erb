@@ -1,0 +1,37 @@
+<div class="FormWrapper">
+  <section class="FormContainer">
+
+  <%= form_with model: @reservation, local: true do |f| %>
+    <h2>予約内容の確認</h2>
+    <div class="ReservationConfirm">
+      <p class="ReservationConfirmLabel">チェックイン</p>
+      <p class="ReservationConfirmValue"><%= @reservation.checkin_date %></p>
+    </div>
+    <div class="ReservationConfirm">
+      <p class="ReservationConfirmLabel">チェックアウト</p>
+      <p class="ReservationConfirmValue"><%= @reservation.checkout_date %></p>
+    </div>
+    <div class="ReservationConfirm">
+      <p class="ReservationConfirmLabel">日数</p>
+      <p class="ReservationConfirmValue"><%= @reservation.total_date %></p>
+    </div>
+    <div class="ReservationConfirm">
+      <p class="ReservationConfirmLabel">人数</p>
+      <p class="ReservationConfirmValue"><%= @reservation.person_count %></p>
+    </div>
+    <div class="ReservationConfirm">
+      <p class="ReservationConfirmLabel">お支払い金額</p>
+      <p class="ReservationConfirmPrice">¥<%= number_with_delimiter(@reservation.total_price) %></p>
+    </div>
+    <p class="ReservationConfirmDescription">上記の内容で正しければ、「予約を確定」ボタンを押して下さい</p>
+    <%= f.hidden_field :checkin_date, value: @reservation.checkin_date %>
+    <%= f.hidden_field :checkout_date, value: @reservation.checkout_date %>
+    <%= f.hidden_field :person_count, value: @reservation.person_count %>
+    <%= f.hidden_field :user_id %>
+    <%= f.hidden_field :room_id, value: @room.id %>
+    <%= f.submit "予約を確定", class:"btn btn-danger", style:"background-color:#ff7757" %>
+    <%= link_to "キャンセル", request.referer, class:"btn btn-outline-secondary" %>
+  <% end %>
+  </section>
+</div>
+<%= render 'layouts/shared/footer' %>

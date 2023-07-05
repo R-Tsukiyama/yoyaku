@@ -8,9 +8,27 @@
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
+    <%= stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    </head>
 
   <body>
+    <% if flash[:notice] %>
+      <p>Notice: <%= flash[:notice] %></p>
+    <% end %>
+    <% if flash[:alert] %>
+    <div class="alert alert-danger d-flex align-items-center" role="alert">
+      <p><%= flash[:alert] %></p>
+    </div>
+    <% end %>
+
+  <header>
+    <% if user_signed_in? %>
+      <%= render "layouts/shared/login_header" %>
+    <% else %>
+      <%= render "layouts/shared/logout_header" %>
+    <% end %>
+  </header>
+
     <%= yield %>
   </body>
 </html>

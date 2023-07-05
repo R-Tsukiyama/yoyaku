@@ -1,0 +1,34 @@
+<div class="EditWrapper">
+  <section class="EditReservationContainer">
+    <h2>予約を編集する</h2>
+    <div class="ReservationDetails">
+      <%= @reservation.room.roomimage? ? image_tag(reservation.room.roomimage.url) : image_tag("defaultRoomimage.png") %>
+      <div class="ReservationDetailsHeader">
+        <p class="ReservationDetailsRoomName"><%= @reservation.room.name %></p>
+        <span class="ReservationDetailsRoomPrice">¥<%= number_with_delimiter(@reservation.room.price) %>〜</span>
+      </div>
+      <span class="ReservationDetailsAddress"><%= @reservation.room.address %></span>
+      <p class="ReservationDetailsOverview"><%= @reservation.room.overview %></p>
+    </div>
+    <%= form_with model: @reservation, local: true do |f| %>
+    <div class="form-group">
+      <%= f.label :checkin_date, "チェックイン", class:"form-label" %>
+      <%= f.date_field :checkin_date, class:"form-control" %>
+    </div>
+    <div class="form-group">
+      <%= f.label :checkout_date, "チェックアウト", class:"form-label" %>
+      <%= f.date_field :checkout_date, class:"form-control" %>
+    </div>
+    <div class="form-group">
+      <%= f.label :person_count, "人数", class:"form-label" %>
+      <%= f.number_field :person_count, class:"form-control" %>
+    </div>
+    <div class="form-buttons">
+      <%= f.submit "再予約する", class:"btn btn-danger", style: "background-color:#ff7757" %>
+      <%= link_to "キャンセル", :back, class:"btn btn-outline-secondary" %>
+    </div>
+    <% end %>
+  </section>
+</div>
+<%= render 'layouts/shared/footer' %>
+

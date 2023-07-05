@@ -1,0 +1,13 @@
+<header>
+  <nav class="navbar">
+    <div class="container-fluid">
+      <%= link_to home_index_path do %>
+        <%= image_tag 'logo.png', alt: "サイトロゴ", class: "navbar-logo" %>
+      <% end %> 
+      <div class="navbar-link">
+        <%= link_to 'ログイン', new_user_session_path, class: "sign-in-button" %>
+        <%= link_to '新規登録', new_user_registration_path, class: "sign-up-button" %>
+      </div>
+    </div>
+  </nav>
+</header>  
