@@ -1,16 +1,19 @@
 class Reservation < ApplicationRecord
     belongs_to :user
     belongs_to :room
-    validates :checkin_date, :checkout_date, :person_count, presence: true
+    
+    validates :checkin_date, presence: { message: "日を入力してください" }
+    validates :checkout_date, presence: { message: "日を入力してください" }
+    validates :person_count, presence: { message: "を入力してください。" } , numericality: {only_integer: true, greater_than: 0}
+
     validate :start_end_check
    #チェックイン/アウトのバリデーション
     def start_end_check
-      if checkin_date == nil
-        errors.add(:checkin_date, "開始日を入力してください")
-      elsif checkout_date == nil
-        errors.add(:checkout_date, "終了日を入力してください")
-      elsif checkout_date < checkin_date
-        errors.add(:checkout_date, "終了日は開始日よりも後の日付にしてください")
+      if checkin_date.nil? || checkout_date.nil?
+        return
+      end
+      if self.checkout_date < self.checkin_date
+        errors.add(:checkout_date, "は開始日より前の日付は登録できません。") 
       end
     end
 
@@ -21,4 +24,6 @@ class Reservation < ApplicationRecord
     def total_price
         total_price = (total_date * person_count * room.price)
     end
+
+    
 end

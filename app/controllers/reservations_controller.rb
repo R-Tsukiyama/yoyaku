@@ -44,6 +44,13 @@ class ReservationsController < ApplicationController
     @user = current_user
     @room = Room.find(params[:reservation][:room_id])
     @reservation = Reservation.new(reservation_params)
+    @q = Room.ransack(params[:q])
+    @rooms = @q.result(distinct: true)
+    if @reservation.invalid?
+      render template: 'rooms/show'
+    else  
+      @total_date = (@reservation.checkout_date - @reservation.checkin_date).to_i
+    end  
   end
 
   private
