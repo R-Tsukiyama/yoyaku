@@ -9,7 +9,7 @@
 </div>
 <div class ="container RoomDetailsContainer">
   <div class="RoomDetailsHeader">
-    <%= link_to "←戻る", request.referer %>
+    <%= link_to "←戻る", :back %>
     <% if @room.user.id == current_user.id %>
       <%= link_to "編集", edit_room_path(@room) %>
     <% end %>

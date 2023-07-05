@@ -1,5 +1,5 @@
-<div class="ConfirmFormWrapper">
-  <section class="ConfirmForm">
+<div class="FormWrapper">
+  <section class="FormContainer">
 
   <%= form_with model: @reservation, local: true do |f| %>
     <h2>予約内容の確認</h2>
@@ -29,8 +29,8 @@
     <%= f.hidden_field :person_count, value: @reservation.person_count %>
     <%= f.hidden_field :user_id %>
     <%= f.hidden_field :room_id, value: @room.id %>
-    <%= f.submit "予約を確定", class:"btn btn-submit" %>
-    <%= link_to "キャンセル", request.referer, class: "btn btn-cancel" %>
+    <%= f.submit "予約を確定", class:"btn btn-danger", style:"background-color:#ff7757" %>
+    <%= link_to "キャンセル", request.referer, class:"btn btn-outline-secondary" %>
   <% end %>
   </section>
 </div>

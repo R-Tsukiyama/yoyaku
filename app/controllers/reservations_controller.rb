@@ -11,6 +11,10 @@ class ReservationsController < ApplicationController
     @room = Room.find(params[:room_id])
   end
 
+  def show
+    redirect_to reservations_path (@reservation)
+  end
+
   def create
     @user = current_user
     @reservation = Reservation.new(reservation_params)
