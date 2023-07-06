@@ -1,0 +1,26 @@
+ja:
+  activerecord:
+    attributes:
+      room:
+        name: 施設名
+        overview: 施設詳細
+        price: 料金
+        address: 住所
+      
+      reservation:
+        checkin_date: チェックイン
+        checkout_date: チェックアウト
+        person_count: 人数
+    
+    errors:
+      models:
+        reservation:
+          attributes:
+            person_count:
+              not_a_number: が未記入です
+              greater_than: は1人以上で入力してください。
+        room:
+          attributes:
+            price:
+              greater_than_or_equal_to: は1円以上から登録してください
+              not_a_number: が未記入です。

@@ -1,0 +1,689 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+ @font-face {
+  font-family: 'Shirokuma';
+  src: font-url('Shirokuma.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+.field_with_errors{
+  color: #ff4949;
+  font-size: small;
+}
+.alert{
+  position: -webkit-sticky;
+  position: sticky;
+  top:10px;
+}
+
+ //ヘッダー関連
+.navbar {
+  background-color: #1c1d3b;
+  height: 80px;
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  padding: 0 32px;
+}
+    
+.container-fluid {
+  display: flex;
+  flex-wrap: inherit;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1440px;
+  padding: 0 32px;
+}
+    
+.navbar-logo {
+  width: 221px;
+}
+
+.navbar-link {
+  display: flex;
+  padding-left: 0;
+  margin-bottom: 0;
+  align-items: center;
+}
+.dropdown {
+  a {
+    text-decoration: none;
+  }
+  .username {
+    color: #fff;
+  }
+  img {
+    margin-right: 8px;
+  }
+  .dropdown-menu {
+    min-width: 122px;
+    padding: 9px 0;
+
+    .dropdown-item {
+      font-size: 14px;
+      line-height: 18px;
+      padding: 0 8px;
+      > a {
+        color: #333;
+        display: block;
+        width: 100%;
+        text-decoration: none;
+      }
+    }
+    .btn {
+      text-decoration: none;
+      color: red;
+      padding: 0 !important;
+      margin: 0 !important;
+      text-align: left !important;
+    }
+  }
+}
+
+
+//home#index
+.FirstView {
+  background-image: image-url("cover.jpeg");
+  background-size: cover;
+  background-position: 50%;
+  height: 750px;
+  margin-bottom: 180px;
+  padding-top: 80px;
+  width: 100%;
+}
+
+.Container {
+  max-width: 1440px;
+  padding: 0 32px;
+  margin: 0 auto;
+}
+
+.FirstViewTitle {
+  color: #fff;
+  font-family: Lato, sans-serif;
+  font-size:  clamp(16px, 8vw, 84px);
+  font-weight: 400;
+  line-height: auto;
+  margin-bottom: 48px;
+  text-align: center;
+  word-break: keep-all;
+}
+
+.SecondView {
+  width: 100%;
+  padding-right: var(--bs-gutter-x,.75rem);
+  padding-left: var(--bs-gutter-x,.75rem);
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.RecommendAreaSection {
+  margin-bottom: 260px;
+  > h2 {
+    border-bottom: 3px solid #ff7757;
+    font-size: 44px;
+    line-height: 66px;
+    margin-bottom: 140px;
+    padding-bottom: 15px;
+    width: fit-content;
+  }
+  .RecommendAreas {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  .RecommendArea {
+    display: flex;
+    flex-direction: column;
+    height: 455px;
+    justify-content: flex-end;
+    width: calc(25% - 24px);
+    .AreaImage {
+      position: relative;
+      img {
+        border-radius: 26px;
+        width: 320px;
+        height: 455px;
+      }
+    }
+    .AreaText {
+      position: absolute;
+      bottom: 25px;
+      left: 25px;
+
+      > span {
+        color: #fff;
+        font-size: 28px;
+        line-height: 42px;
+      }
+    }
+  }
+}
+.sign-in-button {
+  margin-right: 32px;
+  color: #fff;
+  font-size: 12px;
+  line-height: 18px;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.sign-up-button {
+  background-color: #ff7757;
+  color: #fff;
+  font-size: 12px;
+  line-height: 18px;
+  font-weight: 700;
+  display: inline-block;
+  border-radius: 0.25rem;
+  padding: 0.375rem 0.75rem;
+  text-decoration: none;
+}
+
+.FirstViewSearch {
+  background: hsla(0,0%,100%,.4);
+  margin: auto;
+  padding: 32px;
+  width: 704px;
+
+  .form-control {
+      height: 58px;
+      margin-bottom: 16px
+  }
+}
+
+//フッター関連
+footer {
+  align-items: center;
+  background-color: #1c1d3b;
+  display: flex;
+  height: 465px;
+  .container-fluid {
+    max-width: 1440px;
+    padding: 0 50px;
+    margin-left: auto;
+ }
+}
+
+footer > div {
+  margin-top: 100px;
+}
+  
+.footer-logo {
+  width: 294px;
+}
+
+//アカウント登録関連
+.AccountFormWrapper {
+  background-color: #dfe2e6;
+  display: flex;
+  padding: 60px 0 120px;
+}
+  
+.AccountFormContainer {
+  background-color: #fff;
+  margin: auto;
+  padding: 32px;
+  width: 704px;
+  text-align: center;
+}  
+
+.form-group {
+  margin-bottom: 1rem;
+  text-align: left;
+}
+.form-label {
+  font-size: 14px;
+  line-height: 18px;
+  margin-bottom: 0.5rem;
+}
+.form-control {
+  display: block;
+  width: 100%;
+  padding: 0.375rem 0.75rem;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #212529;
+  background-color: #fff;
+  background-clip: padding-box;
+  border: 1px solid #ced4da;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border-radius: 0.25rem;
+  transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+label {
+  color: #6a6a6a;
+  font-weight: 700;
+}
+
+.btn {
+  display: inline-block;
+  width: 100%;
+  padding: 14px 24px !important;
+  height: 58px;
+  margin-bottom: 16px !important;
+  border-radius: 20px !important;
+}
+
+.UserSection {
+  padding: 40px 32px 160px 32px;
+
+  h2 {
+    font-size: 28px;
+    font-weight: 500;
+    line-height: 39px;
+    margin-bottom: 24px;
+    font-family: Shirokuma;
+  }
+
+  .UserContainer {
+    display: flex;
+    gap: 32px;
+
+    .NavList {
+      border: 1px solid #dfe2e6;
+      width: 300px;
+      list-style: none;
+      padding-left: 0;
+      margin-top: 0;
+      height: fit-content;
+      border-radius: 20px;
+      font-family: Shirokuma;
+
+      .NavListItem {
+        padding: 20px 24px;
+
+        .NavListItemLink {
+          color: #9193ad;
+          font-size: 16px;
+          line-height: 26px;
+          text-decoration: none;
+        }
+      }
+
+      .NavListItem:first-of-type {
+        border-bottom: 1px solid #dfe2e6;
+      }
+    }
+
+    .AccountInformation {
+      width: calc(100% - 32px);
+
+      .AccountHeader {
+        align-items: center;
+        border-bottom: 1px solid #dfe2e6;
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 24px;
+        padding-bottom: 8px;
+
+        > h3 {
+          color: #9193ad;
+          font-size: 40px;
+          font-weight: 500;
+          line-height: 39px;
+          font-family: Shirokuma;
+        }
+
+        > .AccountEditLink {
+          font-size: 20px;
+          font-weight: 500;
+          line-height: 30px;
+          text-decoration: none;
+        }
+      }
+
+      .AccountItem {
+        align-items: center;
+        display: flex;
+        margin-bottom: 50px;
+        margin-left: 10px;
+
+         h4 {
+          color: #585b7a;
+          font-size: 16px;
+          font-weight: 700;
+          line-height: 20px;
+          width: 25%;
+          margin-right: 20px;
+        }
+
+         p {
+          margin: 10px;
+          font-size: 20px;
+          text-align: center;
+          color: #9193ad;
+        }
+      }
+    }
+   }
+  }
+
+//reservation#index
+.ReservationsContainer {
+  margin-top: 40px;
+  margin-bottom: 260px;
+  max-width: 1440px;
+  padding: 0 32px;
+
+  tbody, td, tfoot, th, thead, tr {
+    border-color: inherit;
+    border-style: solid;
+    border-width: 0;
+ }
+  .table-responsive {
+    overflow-x: auto;
+ }
+  .table {
+    vertical-align: middle!important;
+    width: 100%;
+    margin-bottom: 1rem;
+    color: #212529;
+    vertical-align: top;
+    border-color: #dee2e6;
+ }
+  tr {
+    display: table-row;
+    vertical-align: inherit;
+ }
+  h2,h3 {
+    font-size: 28px;
+    font-weight: 500;
+    line-height: 39px;
+ }
+  h2 {
+    margin-bottom: 24px;
+    font-family: Shirokuma;
+ }
+  .table>:not(:last-child)>:last-child>* {
+    border-bottom-color: currentColor;
+ }
+  .ReservationsTable td, .ReservationsTable th {
+    font-size: 14px;
+    line-height: 18px;
+ }
+  .ReservationsTable td {
+    padding: 16px 0.5rem!important;
+ }
+  .dropdown {
+    cursor: pointer;
+ }
+}
+
+//reservations#edit
+.EditWrapper {
+  padding: 40px 0 180px;
+}
+.EditReservationContainer {
+  background-color: #fff;
+  border-radius: 12px;
+  margin: auto;
+  width: 702px;
+  
+  img {
+    margin-bottom: 24px;
+    width: 100%;
+  }
+  .ReservationDetailsHeader {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+ }
+  .ReservationDetailsRoomName {
+    color: #767e86;
+    font-size: 24px;
+    line-height: 28px;
+    margin-bottom: 8px;
+ }
+  .ReservationDetailsRoomPrice {
+    color: #ff7757;
+    font-family: Lato,sans-serif;
+    font-size: 28px;
+    font-weight: 700;
+    line-height: 39px;
+    margin-bottom: 0;
+ }
+ .btn-submit {
+    background-color: #ff7757;
+    color: #fff;
+    margin-bottom: 16px;
+ }
+ .btn-cancel {
+    border: 1px solid #e0e0e0;
+    color: #6a6a6a;
+    line-height: 44px;
+    color: #333;
+ }
+}
+
+//rooms#index
+.OwnRoomsContainer {
+  margin-top: 40px;
+  margin-bottom: 260px;
+  max-width: 1440px;
+  padding: 0 32px;
+
+  tbody, td, tfoot, th, thead, tr {
+    border-color: inherit;
+    border-style: solid;
+    border-width: 0;
+ }
+  tr {
+    display: table-row;
+    vertical-align: inherit;
+ }
+  h2, h3 {
+    font-size: 28px;
+    font-weight: 500;
+    line-height: 39px;
+ }
+  h2 {
+    margin-bottom: 24px;
+    font-family: Shirokuma;
+ }
+ .table-responsive {
+    overflow-x: auto;
+ }
+ .table{
+    vertical-align: middle!important;
+    width: 100%;
+    margin-bottom: 1rem;
+    color: #212529;
+    vertical-align: top;
+    border-color: #dee2e6;
+  }
+  .table>:not(:last-child)>:last-child>* {
+    border-bottom-color: currentColor;
+  }
+  .OwnRoomsTable td {
+    padding: 16px 0.5rem!important;
+  }
+  .OwnRoomsTable td, .OwnRoomsTable th {
+    font-size: 14px;
+    line-height: 18px;
+  }
+  .dropdown {
+    cursor: pointer;
+  }
+ }
+
+ //room#show
+ .SearchRoomsContainer {
+  background-color: #dfe2e6;
+  display: flex;
+  height: 125px;
+
+  .SearchRoomsForm {
+    margin: auto;
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
+ }
+  form {
+    display: flex;
+    margin-top: auto;
+    grid-gap: 16px;
+ }
+  #search-form {
+    height: 45px;
+    padding-left: 45px;
+    width: 285px;
+ }
+  #search-btn {
+    font-size: 16px;
+    line-height: 24px;
+    height: 45px;
+    width: 100px;
+    border: none;
+ }
+}
+.RoomDetailsContainer {
+  margin-bottom: 260px;
+  padding-top: 40px;
+
+  .container, .container-fluid {
+    max-width: 1440px;
+    padding: 0 32px;
+  }
+  .RoomDetailsHeader {
+    display: flex;
+    justify-content: space-between;
+    a {
+       color: #0071c1;
+       display: flex;
+       grid-gap: 8px;
+       gap: 8px;
+       font-size: 18px;
+       line-height: 30px;
+       margin-bottom: 24px;
+       width: -webkit-fit-content;
+       width: -moz-fit-content;
+       width: fit-content;
+       text-decoration: none;
+     }
+  }
+  .RoomDetails {
+    align-items: flex-start;
+    display: flex;
+    grid-gap: 32px;
+    gap: 32px;
+  }
+  img {
+    object-fit: contain;
+    width: 40%;
+  }
+  .RoomDetailsWrapper {
+    background-color: #fff8f1;
+    padding: 40px 24px;
+  }
+  .RoomNameAndPrice {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 8px;
+      p{
+        margin-top: 0;
+      }
+     .RoomName {
+      font-size: 28px;
+      line-height: 39px;
+      margin-bottom: 0;
+      color: #767e86;
+     }
+     .RoomPrice {
+      color: #ff7757;
+      font-family: Lato,sans-serif;
+      font-size: 28px;
+      font-weight: 700;
+      line-height: 39px;
+      margin-bottom: 0;
+      font-size: 38px;
+      line-height: 54px;
+     }
+     .RoomAddress {
+      color: #767e86;
+      font-size: 14px;
+      line-height: 21px;
+      margin-bottom: 3px;
+     }
+     .RoomOverview {
+      font-size: 16px;
+      line-height: 24px;
+      margin-bottom: 24px;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 3;
+      overflow: hidden;
+      display: block;
+     }
+  }
+  .ReservationForm {
+    background-color: #fff;
+    display: flex;
+    grid-gap: 24px;
+    gap: 24px;
+    margin-bottom: 24px;
+    padding: 24px;
+  }
+  .form-group {
+    width: calc(33.33333% - 16px);
+  }
+  .form-group>label {
+    margin-bottom: 8px;
+  }
+  .person_count {
+    position: relative;
+  }
+  .person_count>span {
+      color: #a2a2a4;
+      position: absolute;
+      top: 42px;
+      right: 13.5px;
+  }
+  .btn {
+    align-items: center;
+    border-radius: 12px;
+    display: flex;
+    justify-content: center;
+    height: 58px;
+    font-size: 18px;
+    background-color: #ff7757;
+    color: #fff;
+    height: 71px;
+    width: 100%;
+  }
+}
+//room#edit
+.FormWrapper {
+  display: flex;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  padding: 40px 0 180px;
+}
+.FormContainer {
+  background-color: #fff;
+  border-radius: 12px;
+  margin: auto;
+  width: 702px;
+}

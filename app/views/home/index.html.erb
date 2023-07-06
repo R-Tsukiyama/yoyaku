@@ -1,0 +1,68 @@
+<div class="FirstView">
+  <section class="Container">
+    <h2 class="FirstViewTitle">
+      Potepan Shareで<br>
+      まだ体験したことのない<br>
+      旅をしよう
+    </h2>
+    <div class="FirstViewSearch">
+      <%= search_form_for @q, url: search_rooms_path, method: :get do |f| %>
+        <%= f.search_field :address_cont, class:"form-control", placeholder: "エリアを入力" %>
+        <%= f.submit "検索", class: "btn btn-danger", style: "background-color:#ff7757" %>
+      <% end %>
+    </div>
+  </section>
+</div>
+
+<div class="SecondView">
+  <section class="RecommendAreaSection">
+    <h2>おすすめエリア</h2>
+    <div class="RecommendAreas">
+      <div class="RecommendArea Tokyo">
+        <%= link_to ({ controller: "rooms", action: "search", q: { address_cont: '東京' }}) do %>
+        <div class="AreaImage">
+          <%= image_tag ("tokyo.jpg") %>
+          <div class="AreaText">
+            <span>東京</span><br>
+            <span>Tokyo</span>
+          </div>  
+        </div>
+        <% end %>
+      </div>
+      <div class="RecommendArea Osaka">
+        <%= link_to ({controller:"rooms", action:"search", q: {address_cont:'大阪' }}) do %>
+        <div class="AreaImage">
+          <%= image_tag ("osaka.jpg") %>
+          <div class="AreaText">
+            <span>大阪</span><br>
+            <span>Osaka</span>
+          </div>  
+        </div>
+        <% end %>
+      </div>
+      <div class="RecommendArea Kyoto">
+        <%= link_to ({controller:"rooms", action:"search", q: {address_cont:'京都' }}) do %>
+        <div class="AreaImage">
+          <%= image_tag ("kyoto.jpg") %>
+          <div class="AreaText">
+            <span>京都</span><br>
+            <span>Kyoto</span>
+          </div>  
+        </div>
+        <% end %>
+      </div>
+      <div class="RecommendArea Sapporo">
+        <%= link_to ({controller:"rooms", action:"search", q: {address_cont:'札幌' }}) do %>
+        <div class="AreaImage">
+          <%= image_tag ("sapporo.jpg") %>
+          <div class="AreaText">
+            <span>札幌</span><br>
+            <span>Sapporo</span>
+          </div>  
+        </div>
+        <% end %>
+      </div>
+    </div>
+  </section>
+</div>
+<%= render "layouts/shared/footer" %>
