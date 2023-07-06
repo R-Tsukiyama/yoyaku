@@ -18,4 +18,9 @@ ja:
           attributes:
             person_count:
               not_a_number: が未記入です
-              greater_than: は1人以上で入力してください
+              greater_than: は1人以上で入力してください。
+        room:
+          attributes:
+            price:
+              greater_than_or_equal_to: は1円以上から登録してください
+              not_a_number: が未記入です。

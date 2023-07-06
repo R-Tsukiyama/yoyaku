@@ -3,19 +3,19 @@
     <h2>施設情報の編集</h2>
     <%= form_with model: @room, local: true do |f| %>
     <div class="form-group">
-      <%= f.label :name, "施設名", class:"form-label" %>
+      <%= f.label :name, "施設名【必須】", class:"form-label" %>
       <%= f.text_field :name, class:"form-control", placeholder:"施設名を入力" %>
     </div>
     <div class="form-group">
-      <%= f.label :overview, "施設詳細", class:"form-label" %>
+      <%= f.label :overview, "施設詳細【必須】", class:"form-label" %>
       <%= f.text_area :overview, class:"form-control", placeholder:"施設詳細を入力", rows:"5" %>
     </div>
     <div class="form-group">
-      <%= f.label :price, "料金", class:"form-label" %>
+      <%= f.label :price, "料金【必須】", class:"form-label" %>
       <%= f.text_field :price, class:"form-control", placeholder:"一泊の料金を入力" %>
     </div>
     <div class="form-group">
-      <%= f.label :address, "住所", class:"form-label" %>
+      <%= f.label :address, "住所【必須】", class:"form-label" %>
       <%= f.text_field :address, class:"form-control", placeholder:"住所を入力" %>
     </div>
     <div class="form-group uploadarea">

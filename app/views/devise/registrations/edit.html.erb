@@ -27,21 +27,17 @@
       <div class="mb-4 form-group">
         <div class="label-text">
           <%= f.label :password, "変更後パスワード", class: "form-label" %>
-          <br>
-          <span>※変更する場合のみ</span>
         </div>
         <div class="input-form">
-          <%= f.password_field :password, autocomplete: 'current-password', class: 'form-control', placeholder:"変更後パスワードを入力" %>
+          <%= f.password_field :password, autocomplete: 'new-password', class: 'form-control', placeholder:"変更後パスワードを入力" %>
         </div>
       </div>
       <div class="mb-4 form-group">
         <div class="label-text">
           <%= f.label :password_confirmation, "確認用パスワード", class: "form-label" %>
-          <br>
-          <span>※変更する場合のみ</span>
       </div>
         <div class="input-form">
-          <%= f.password_field :password, autocomplete: 'current-password', class: 'form-control', placeholder:"変更後パスワードを入力" %>
+          <%= f.password_field :password, autocomplete: 'new-password', class: 'form-control', placeholder:"変更後パスワードを入力" %>
         </div>
       </div>
       <div class="mb-4 form-group">

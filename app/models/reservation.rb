@@ -4,7 +4,7 @@ class Reservation < ApplicationRecord
     
     validates :checkin_date, presence: { message: "日を入力してください" }
     validates :checkout_date, presence: { message: "日を入力してください" }
-    validates :person_count, presence: { message: "を入力してください。" } , numericality: {only_integer: true, greater_than: 0}
+    validates :person_count, presence: { message: "を入力してください。" } , numericality: {only_integer: true, greater_than: 1}
 
     validate :start_end_check
    #チェックイン/アウトのバリデーション
